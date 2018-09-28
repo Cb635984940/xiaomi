@@ -17,6 +17,10 @@ a{
 h1,h2,h3,h4,h5,h6{
 	font-style: normal;
 }
+body{
+	background: #F5F5F5;
+}
+
 .head{
 	width: 100%;
 	height: 121px;
@@ -53,6 +57,16 @@ h1,h2,h3,h4,h5,h6{
 	color: #b0b0b0;
 	text-decoration: none;
 	font-size: 12px;
+}
+.list .big-box{
+	width: 992px;
+	height:460px;
+	background: #fff;
+	position: absolute;
+	left:20px ;
+	top: -20px;
+	z-index: 999;
+	
 }
 .nav span{
 	color: #424242;
@@ -231,7 +245,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .banner{
 	width: 100%;
-	/* background-color:yellow;  */
+	 background-color:#fff;  
 	position: relative;
 	overflow: hidden;
 	height: 460px;
@@ -277,7 +291,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .list{
 	width: 234px;
-	/* height: 460px; */
+	 height: 460px; 
 	background: rgba(0, 0, 0, 0.6);
 	border: 0;
 	overflow: hidden;
@@ -299,6 +313,9 @@ h1,h2,h3,h4,h5,h6{
 	padding-left: 30px;
 	height: 42px;
 }
+.tu{
+	background: #fff;
+}
 .list i{
 	color: #B0AFAD;
 	list-style: none;
@@ -311,7 +328,7 @@ h1,h2,h3,h4,h5,h6{
 	margin-top: 14px;
 	width: 100%;
 	height: 180px;
-	/* background: yellow; */
+	 background:#fff; 
 }
 .span4{
 	width: 234px;
@@ -352,6 +369,7 @@ h1,h2,h3,h4,h5,h6{
 	margin-left: 14px;
 }
 .box{
+	background: #fff;
 	height: 58px;
 	/* position: relative; */
 }
@@ -386,7 +404,7 @@ h1,h2,h3,h4,h5,h6{
 .main{
 	height: 340px;
 	width: 100%;
-	/* background: yellow; */
+	 background:#fff; 
 }
 .main .dao{
 	width: 234px;
@@ -501,6 +519,16 @@ border-top: 1px solid #2196F3;
 	background: #fff;
 	transition: all .2s;
 }
+.span16-12:hover{
+	transform: translate(0px,-5px);
+	transition: all .2s linear;
+	box-shadow:0px 3px 20px 2px #757575;
+}
+.brick-item:hover{
+	transform: translate(0px,-5px);
+	transition: all .2s linear;
+	box-shadow:0px 3px 20px 2px #757575;
+}
 .box-hd .span16 .desc{
 	margin: 0 10px 10px;
 	height: 18px;font-size: 12px;
@@ -608,7 +636,19 @@ border-top: 1px solid #2196F3;
 .jdcon{
 	width: 1226px;
 	margin: 0 auto;	
+	overflow: hidden;
 }
+.jdcon .span-10 li:hover{
+	transform: translate(0px,-5px);
+	transition: all .2s linear;
+	box-shadow:0px 3px 20px 0px #757575;
+}
+.jdcon .span-11 li:hover{
+	transform: translate(0px,-5px);
+	transition: all .2s linear;
+	box-shadow:0px 3px 20px 0px #757575;
+}
+
 .jdcon .box_hd{
 	position: relative;
 }
@@ -635,10 +675,194 @@ border-top: 1px solid #2196F3;
 .img-1{
 	width: 234px;
 	height: 300px;
-	margin-bottom:14px ;
+	margin-bottom:14px;
 }
 .img-1 img{
 	width: 100%;
 	height: 100%;
 	cursor: pointer;
+}
+.span-11{
+	float: left;
+}
+.span-10 li{
+	width: 234px;
+	height:300px;
+	float: left;
+	margin-left:14px;
+	margin-bottom:14px;
+	padding: 34px 0 20px;
+	background: #fff;
+	position: relative;
+	overflow: hidden;
+}
+.review{
+	position: absolute;
+	bottom: -75px;
+	left: 0;
+	width: 234px;
+	height: 75px;
+	overflow: hidden;
+	font-size: 12px;
+	background: #ff6700;
+	transition: all .2s linear;
+	z-index: 33;
+	opacity: 0;
+}
+.span-10 li:hover .review{
+	transform: translateY(-62px);
+	opacity: 1;
+}
+.review a{
+	display: block;
+	padding: 8px 30px;
+	outline: 0;
+}
+.review a span{
+	margin-bottom: 5px;
+	color: #fff;
+}
+.span-10 li .jtwow{
+	position: absolute;
+	top: 0;
+	background: #e53935;
+	left: 50%;
+	width: 64px;
+	height: 20px;
+	font-size: 12px;
+	line-height: 20px;
+	color: #fff;
+	text-align: center;
+	margin-left: -32px;
+}
+.ds-img{
+	width: 150px;
+	height: 150px;
+	margin: 0 auto 18px;
+}
+.ds-img img{
+	width: 100%;
+	height: 100%;
+}
+.span-10 h3{
+	margin: 0 10px;
+	font-size: 14px;
+	font-weight: 400;
+	text-align: center;
+}
+.span-10 a{
+	color: #333;
+}
+.span-10 .desc{
+	margin: 0 10px 10px;
+	height: 18px;
+	font-size: 12px;
+	text-align: center;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	color: #b0b0b0;
+}
+.span-10 .price{
+	margin: 0 10px 10px;
+	text-align: center;
+	color: #ff6700;
+}
+.span-10 .price del{
+	color: #b0b0b0;
+}
+.span-10 .last{
+	height: 143px;
+	padding-top:50px;
+	position: relative;
+}
+.last-img{
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	top: 32px;
+	right: 32px;
+}
+.last-img img{
+	width: 100%;
+	height: 100%;
+}
+.last h3{
+	margin: -10px 110px 5px 30px;
+	font-size: 14px;
+	font-weight: 400px;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.last p{
+	margin: 0 110px 0 35px;
+	font-size: 12px;
+	color: #ff6700;
+}
+.wntj{
+	width: 1226px;
+	margin: 0 auto;
+	height: 358px;
+
+}
+.wntj .box-hd{
+	height: 58px;
+	width: 1226px;
+	margin: 0 auto;
+}
+.wntj .box-hd h2{
+	margin: 0;
+	font-size: 22px;
+	font-weight: 200;
+	line-height: 58px;
+	color: #333;
+}
+.more-2 li{
+	height: 300px;
+	background: #fff;
+	margin-bottom: 14px;
+	text-align: center;
+	width: 234px;
+	float: left;
+	margin-right: 14px;
+}
+.more-2 li:nth-child(5){
+	margin-right: 0px;
+}
+.more-2 dl{
+	padding: 0 20px;
+	margin-bottom: 0;
+}
+.more-2 dl dt{
+	padding: 40px 0 15px;
+	height: 200px;
+}
+.more-2 dl img{
+	width: 140px;
+	height: 140px;
+}
+.more-2 dl dd{
+	margin-bottom: 10px;
+	height: 18px;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.more-2 dl dd a{
+	color: #333;
+	font-size: 14px;
+}
+.secon{
+	margin-bottom: 10px;
+	color: #ff5700;
+}
+.last2{
+	color: #757575;
+	font-size: 14px;
+}
+.more-2 li:hover{
+	transform: translate(0px,-5px);
+	transition: all .2s linear;
+	box-shadow:0px 3px 20px 2px #757575;
 }
