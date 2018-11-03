@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>demo</title>
+		<script src="js/cookie.js" type="text/javascript">
+		</script>
+	</head>
+	<style type="text/css">
+		.top {
+			width: 500px;
+			height: 50px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin: 0 auto;
+		}
+		
+		.fontSize {
+			width: 50px;
+		}
+		
+		.fontFamil {
+			width: 80px;
+		}
+		
+		.bottom {
+			width: 500px;
+			min-height: 300px;
+			margin: 0 auto;
+			border: 1px solid #000000;
+			padding: 20px 20px;
+			box-sizing: border-box;
+		}
+	</style>
+
+	<body>
+		<div class="top">
+			<div>
+				字体大小：<input type="number" value="12" class="fontSize" />
+			</div>
+			<div>
+				字体样式：
+				<select name="" id="" class="fontFamil">
+					<option value="微软雅黑">微软雅黑</option>
+					<option value="宋体">宋体</option>
+					<option value="楷体">楷体</option>
+				</select>
+			</div>
+			<div>
+				颜色：<input type="color" class="fontColor" />
+			</div>
+			<button class="btn">重置</button>
+		</div>
+		<div class="bottom">
+			JSON是一种轻量级的数据交换格式，它基于ECMAScript的一个子集，采用完全独立于编程语言的文本格式来存储和表示数据。简洁和清晰的层次结构使得json成为理想的数据交换语言，易与人阅读和编写，同时也易于机器解析和生成，并有效地提升网络传输效率。
+			xml：一种数据交换格式
+			json：一种数据交换格式
+			    1.语法简洁
+			    2、提高网络传输效率
+			    3.易读性强
+			    4.语法格式和js的对象类似
+		</div>
+	</body>
+	<script type="text/javascript">
+		let fontFamily = document.querySelector(".fontFamil")
+		let fontsize = document.querySelector(".fontSize")
+		let color = document.querySelector(".fontColor")
+		let bottom = document.querySelector(".bottom")
+		let btn = document.querySelector(".btn")
+		console.log(bottom)
+
+		fontsize.onchange = function() {
+			bottom.style.fontSize = this.value + "px";
+			setCookie({
+				key: "fontsize",
+				val: this.value,
+				maxAge: 3600 * 24 * 365,
+			});
+
+		}
+		let obj = getCookie();
+		if(obj.fontsize) {
+			bottom.style.fontSize = obj.fontsize + "px";
+			fontsize.value = obj.fontsize;
+		}
+
+		fontFamily.onchange = function() {
+			bottom.style.fontFamily = this.value;
+			setCookie({
+				key: "fontFamily",
+				val: escape(this.value),
+				maxAge: 3600 * 24 * 365
+			})
+		}
+		//		let obj = getCookie();
+		if(obj.fontFamily) {
+			bottom.style.fontFamily = unescape(obj.fontFamily)
+			fontFamily.value = unescape(obj.fontFamily);
+		}
+
+		color.onchange = function() {
+			bottom.style.color = this.value;
+			setCookie({
+				key: "color",
+				val: this.value,
+				maxAge: 3600 * 60 * 365
+			})
+		}
+		if(obj.color) {
+			bottom.style.color = obj.color;
+			color.value = obj.color;
+		}
+		
+		
+	</script>
+
+</html>

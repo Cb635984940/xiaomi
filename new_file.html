@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript">
+		</script>
+	</head>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		
+		ul {
+			width: 100%;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			margin: auto 0;
+			display: flex;
+			flex-flow: wrap;
+			justify-content: center;
+			align-content: space-around
+		}
+		
+		li {
+			width: 400px;
+			height: 150px;
+			background: salmon;
+			text-align: center;
+			line-height: 150px;
+			font-size: 30px;
+			margin-left: 30px;
+			cursor: pointer;
+		}
+		
+		.mask {
+			position: fixed;
+			z-index: 10;
+			background: rgba(0, 0, 0, 0.5);
+			width: 100vw;
+			height: 100vh;
+			display: none;
+		}
+		
+		.box {
+			width: 70vw;
+			height: 35vh;
+			background: #9ACD32;
+			transform: scale(0);
+			transition: all 0.1s;
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			font-size: 50px;
+			line-height: 35vh;
+			text-align: center;
+		}
+	</style>
+
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+		<div class="mask">
+			<div class="box">
+
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(function() {
+			let index = 0;
+			$("li").click(function() {
+				let con = $(this).html();
+				index = $("li").index(this);
+				$(".mask").fadeIn(1000, function() {
+					$(this).find(".box").css("transform", "scale(1)").html(con);
+				}).click(function() {
+					$(this).find(".box").css("transform", "scale(0)").end().delay(1000).fadeOut(500, function() {
+						$(window).off("keydown");
+					});
+				});
+				$(window).keydown(function(e) {
+					if(e.key == "ArrowRight") {
+						index++;
+						move()
+					}else if(e.key == "ArrowLeft"){
+						index--;
+						move();
+					}
+				})
+			});
+
+			function move() {
+				
+				if(index > $("li")){
+					index = 0
+				}else if(index<0){
+					index =$("li").length-1;
+				}
+				let con = 	$("li").eq(index).html();
+				$(".box").html(con);
+			}
+		});
+	</script>
+
+</html>
